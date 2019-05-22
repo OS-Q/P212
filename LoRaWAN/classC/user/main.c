@@ -1,28 +1,3 @@
-/*!
- * \file      main.c
- *
- * \brief     LoRaMac classB device implementation
- *
- * \copyright Revised BSD License, see section \ref LICENSE.
- *
- * \code
- *                ______                              _
- *               / _____)             _              | |
- *              ( (____  _____ ____ _| |_ _____  ____| |__
- *               \____ \| ___ |    (_   _) ___ |/ ___)  _ \
- *               _____) ) ____| | | || |_| ____( (___| | | |
- *              (______/|_____)_|_|_| \__)_____)\____)_| |_|
- *              (C)2013-2017 Semtech
- *
- * \endcode
- *
- * \author    Miguel Luis ( Semtech )
- *
- * \author    Gregory Cristian ( Semtech )
- */
-
-/*! \file classB/IntoRobot-Ant/main.c */
-
 #include "utilities.h"
 #include "board.h"
 #include "gpio.h"
@@ -204,6 +179,8 @@ static void PrepareTxFrame( uint8_t port )
                 int32_t latitude = 0, longitude = 0;
                 int16_t altitudeGps = 0xFFFF;
                 uint8_t batteryLevel = 0;
+
+                batteryLevel = BoardGetBatteryLevel( );                             // 1 (very low) to 254 (fully charged)
 
                 AppDataSizeBackup = AppDataSize = 16;
                 AppData[0] = AppLedStateOn;
@@ -511,7 +488,6 @@ static void McpsIndication( McpsIndication_t *mcpsIndication )
                     mibReq.Type = MIB_ADR;
                     mibReq.Param.AdrEnable = true;
                     LoRaMacMibSetRequestConfirm( &mibReq );
-
                 }
             }
             else
@@ -749,6 +725,10 @@ int main( void )
 
                 mibReq.Type = MIB_PUBLIC_NETWORK;
                 mibReq.Param.EnablePublicNetwork = LORAWAN_PUBLIC_NETWORK;
+                LoRaMacMibSetRequestConfirm( &mibReq );
+
+                mibReq.Type = MIB_DEVICE_CLASS;
+                mibReq.Param.Class = CLASS_C;
                 LoRaMacMibSetRequestConfirm( &mibReq );
 
                 DeviceState = DEVICE_STATE_JOIN;

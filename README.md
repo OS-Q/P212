@@ -51,6 +51,5 @@ OS-Q中定义的其他LoRa设备：
 * [LoRa-Module](https://github.com/OS-Q/D113)
 * [LoRa-Router](https://github.com/OS-Q/D170)
 
-
 ### [OS-Q : Operation System for edge devices](http://www.OS-Q.com/Edge/D148)
 ####  2019-5-22
