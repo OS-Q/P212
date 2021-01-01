@@ -1,9 +1,9 @@
-﻿# [W47](https://github.com/OS-Q/W47)
+# [B04](https://github.com/OS-Q/B04)
 
 [![sites](http://182.61.61.133/link/resources/OSQ.png)](http://www.OS-Q.com)
 
-### [简介](https://github.com/OS-Q/W47/wiki)
+### [简介](https://github.com/OS-Q/B04/wiki)
 
-[W47](https://github.com/OS-Q/W47)工程模板
+[B04](https://github.com/OS-Q/B04) 板级支持 STM32F103C8
 
 ### [Q = (OpenSource & OperatingSystem) ](http://www.OS-Q.com)

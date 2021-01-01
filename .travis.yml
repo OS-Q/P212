@@ -3,12 +3,13 @@ python:
   - "3.7"
 
 env:
-  - PLATFORMIO_PROJECT_DIR=project/ESP12
-
+  - PLATFORMIO_PROJECT_DIR=project/arduino-blink
+  - PLATFORMIO_PROJECT_DIR=project/nonos-blink
+  - PLATFORMIO_PROJECT_DIR=project/rtos-blink
 
 install:
   - pip install -U https://github.com/OS-Q/S03/archive/master.zip
-  - platformio platform install espressif8266
+  - platformio platform install https://github.com/OS-Q/P04.git
 
 script:
   - platformio run -s -d $PLATFORMIO_PROJECT_DIR
