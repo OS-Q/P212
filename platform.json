@@ -34,13 +34,6 @@
       "homepage": "https://developer.arm.com/tools-and-software/embedded/cmsis",
       "title": "CMSIS"
     },
-    "spl": {
-      "package": "framework-spl",
-      "script": "builder/frameworks/spl.py",
-      "description": "The ST Standard Peripheral Library provides a set of functions for handling the peripherals on the STM32 family of microcontrollers.",
-      "homepage": "https://www.st.com/en/embedded-software/stsw-stm8069.html",
-      "title": "Standard Peripheral Library"
-    },
     "libopencm3": {
       "package": "framework-libopencm3",
       "script": "builder/frameworks/libopencm3/libopencm3.py",
@@ -121,18 +114,6 @@
       "optional": true,
       "owner": "platformio",
       "version": "~2.3.0"
-    },
-    "framework-stm32cubef0": {
-      "type": "framework",
-      "optional": true,
-      "owner": "platformio",
-      "version": "~1.11.0"
-    },
-    "framework-stm32cubef1": {
-      "type": "framework",
-      "optional": true,
-      "owner": "platformio",
-      "version": "~1.8.0"
     },
     "framework-stm32cubef2": {
       "type": "framework",
